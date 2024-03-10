@@ -1,7 +1,9 @@
+import RickAndMortyList from "./RickAndMortyList"
+
 const RickAndMorty = () => {
 
   return (
-    <div>Rick and Morty</div>
+    <RickAndMortyList />
   )
 }
 
