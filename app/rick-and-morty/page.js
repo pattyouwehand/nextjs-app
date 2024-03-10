@@ -1,9 +1,16 @@
+import Search from "../ui/search"
 import RickAndMortyList from "./RickAndMortyList"
 
-const RickAndMorty = () => {
+const RickAndMorty = ({ searchParams }) => {
+  const name = searchParams?.name || ''
+  const currentPage = Number(searchParams?.page) || 1
 
   return (
-    <RickAndMortyList />
+    <main className="flex flex-col">
+      <Search placeholder="Search character" />
+        <RickAndMortyList query={name} currentPage={currentPage} />
+    </main>
+
   )
 }
 
