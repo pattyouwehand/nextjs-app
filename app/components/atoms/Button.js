@@ -1,16 +1,18 @@
+import { Children } from "react"
+
 const Button = ({ buttonData }) => {
   const {
     className,
     onClick,
-    text
+    Children
   } = buttonData
 
   return (
     <button
-      className={className && className}
-      onClick={onClick && onClick}
+      className={className}
+      onClick={onClick}
     >
-      {text}
+      {Children}
     </button>
   )
 }

@@ -7,6 +7,7 @@ const MainImage = ({ imageData }) => {
     className,
     width,
     height,
+    fill,
     sizes,
     priority
   } = imageData
@@ -18,6 +19,7 @@ const MainImage = ({ imageData }) => {
       className={className && className}
       width={width}
       height={height}
+      fill={fill}
       sizes={sizes}
       priority={priority}
     />

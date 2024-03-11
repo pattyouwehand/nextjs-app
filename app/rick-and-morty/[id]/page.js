@@ -1,3 +1,4 @@
+import DetailSection from "@/app/components/organisms/DetailSection"
 import Image from "next/image"
 
 const getCharacter = async (id) => {
@@ -14,27 +15,33 @@ const CharacterDetails = async ({ params }) => {
   const character = await getCharacter(params.id)
   const location = await getLocation(params.id)
 
+  const {
+    image,
+    name,
+    status,
+    species,
+    type,
+    gender,
+    origin
+  } = character
+
+  const detailSectionData = {
+    imageSrc: image,
+    imageAlt: name,
+    name: name,
+    status: status,
+    species: species,
+    gender: gender,
+    type: type,
+    origin: origin.name,
+    location: location.name,
+    locationType: location.type,
+    dimension: location.dimension
+  }
+
   return (
-    <main className="flex flex-col">
-      <Image
-        src={character.image}
-        alt={character.name}
-        width={500}
-        height={500}
-        priority
-      />
-      <h2>{character.name}</h2>
-      <p>status: {character.status}</p>
-      <p>species: {character.species}</p>
-      {
-        character.type &&
-        <p>type: {character.type}</p>
-      }
-      <p>gender: {character.gender}</p>
-      <p>origin: {character.origin.name}</p>
-      <p>location: {location.name}</p>
-      <p>loction type: {location.type}</p>
-      <p>dimension:{location.dimension}</p>
+    <main className="h-screen">
+      <DetailSection detailSectionData={detailSectionData} />
     </main>
   )
 }
