@@ -1,10 +1,43 @@
 @tailwind base;
+
+@layer base {
+  button {
+    @apply h-10 text-base text-primary bg-green-lighter hover:bg-green-light rounded-md;
+  }
+
+  h1 {
+    @apply text-xl mb-2 text-primary;
+  }
+
+  h2 {
+    @apply text-lg mb-2 text-primary;
+  }
+
+  h3 {
+    @apply text-lg mb-2 text-primary;
+  }
+
+  p {
+    @apply text-base text-primary mb-4;
+  }
+}
+
 @tailwind components;
+
+@layer components {
+  a {
+    @apply font-semibold text-orange-default;
+  }
+
+  .section-style {
+    @apply py-10 mx-4;
+  }
+}
+
 @tailwind utilities;
 
 
-/* base styles */
 
-p {
-  @apply mb-4;
-}
+
+
+
