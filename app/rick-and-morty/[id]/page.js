@@ -14,8 +14,6 @@ const CharacterDetails = async ({ params }) => {
   const character = await getCharacter(params.id)
   const location = await getLocation(params.id)
 
-  console.log("params:", params)
-
   return (
     <main className="flex flex-col">
       <Image
