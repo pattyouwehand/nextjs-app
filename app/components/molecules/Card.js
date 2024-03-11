@@ -1,25 +1,22 @@
-import Heading from "../atoms/Heading"
+import Heading from '../atoms/Heading'
 
 const Card = ({ cardData }) => {
   const {
     image,
-    title,
-    onClick
+    title
   } = cardData
 
   const headingData = {
-    className: "shadow-md",
-    title: title.title,
+    title: title,
     level: 2
   }
 
   return (
     <div
-      className="rounded-md"
-      onClick={onClick && onClick}
-      style={{backgroundImage: image, backgroundSize: "cover"}}
+      className="rounded-md h-full flex justify-start items-end shadow-md hover:shadow-xl"
+      style={{backgroundImage: `url(${image})`, backgroundSize: "cover"}}
     >
-      <div className="flex justify-start items-end p-4">
+      <div className="bg-white/30 rounded-bl-md backdrop-blur-sm p-2">
         <Heading headingData={headingData} />
       </div>
     </div>

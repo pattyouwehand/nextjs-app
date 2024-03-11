@@ -6,15 +6,15 @@
   }
 
   h1 {
-    @apply text-xl mb-2 text-primary;
+    @apply text-xl text-primary;
   }
 
   h2 {
-    @apply text-lg mb-2 text-primary;
+    @apply text-lg text-primary;
   }
 
   h3 {
-    @apply text-lg mb-2 text-primary;
+    @apply text-lg text-primary;
   }
 
   p {

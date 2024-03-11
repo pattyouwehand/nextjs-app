@@ -9,7 +9,7 @@ const DetailSection = ({ detailSectionData }) => {
 
   const headingData = {
     className: "",
-    title: title.title,
+    title: title,
     level: 1
   }
 

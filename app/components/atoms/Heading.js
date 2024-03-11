@@ -8,13 +8,13 @@ const Heading = ({ headingData }) => {
   let headingContent
 
   switch (level) {
-    case value: "1"
+    case level: 1
       headingContent = <h1 className={className && className}>{title}</h1>
       break;
-    case value: "2"
+    case level: 2
       headingContent = <h2 className={className && className}>{title}</h2>
       break;
-    case value: "3"
+    case level: 3
       headingContent = <h3 className={className && className}>{title}</h3>
       break;
     default:
