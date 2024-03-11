@@ -6,7 +6,7 @@ const getCharacters = async () => {
   return res.json()
 }
 
-const RickAndMortyList = async ({ query, currentPage }) => {
+const AllCharacters = async ({ query, currentPage }) => {
   const characters = await getCharacters(query, currentPage)
 
   return (
@@ -33,4 +33,4 @@ const RickAndMortyList = async ({ query, currentPage }) => {
   )
 }
 
-export default RickAndMortyList
+export default AllCharacters
