@@ -1,5 +1,4 @@
 import DetailSection from "@/app/components/organisms/DetailSection"
-import Image from "next/image"
 
 const getCharacter = async (id) => {
   const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
