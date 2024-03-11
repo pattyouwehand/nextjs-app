@@ -21,7 +21,7 @@ const Search = ({ placeholder }) => {
   }
 
   return (
-    <div className="relative flex w-full md:w-1/3 xl:w-1/4 flex-shrink-0">
+    <div className="relative flex w-full md:w-1/2 lg:w-1/4 flex-shrink-0 my-4">
       <label htmlFor="search" className="sr-only">Search</label>
       <input
         className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
