@@ -6,8 +6,8 @@ const getCharacters = async () => {
   return res.json()
 }
 
-const RickAndMortyList = async () => {
-  const characters = await getCharacters()
+const AllCharacters = async ({ query, currentPage }) => {
+  const characters = await getCharacters(query, currentPage)
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 md:gap-2 lg:gap-4">
@@ -33,4 +33,4 @@ const RickAndMortyList = async () => {
   )
 }
 
-export default RickAndMortyList
+export default AllCharacters
