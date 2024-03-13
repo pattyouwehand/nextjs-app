@@ -14,8 +14,13 @@ const AllCharacters = async ({ query, currentPage }) => {
       {
         characters.results.map((character) => {
           const cardData = {
-            image: character.image,
-            title: character.name
+            containerStyle: "rounded-md h-full flex justify-start items-end shadow-md hover:shadow-xl",
+            bgImage: character.image,
+            headingContainerStyle: "bg-white/30 rounded-bl-md backdrop-blur-sm p-2",
+            headingData: {
+              title: character.name,
+              level: 2
+            }
           }
 
           return (

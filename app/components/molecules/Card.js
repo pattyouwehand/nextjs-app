@@ -1,24 +1,34 @@
+import Link from 'next/link'
 import Heading from '../atoms/Heading'
 
 const Card = ({ cardData }) => {
   const {
-    image,
-    title
+    containerStyle,
+    bgImage,
+    headingContainerStyle,
+    redirect,
+    headingData
   } = cardData
-
-  const headingData = {
-    title: title,
-    level: 2
-  }
 
   return (
     <div
-      className="rounded-md h-full flex justify-start items-end shadow-md hover:shadow-xl"
-      style={{backgroundImage: `url(${image})`, backgroundSize: "cover"}}
+      className={containerStyle}
+      style={{backgroundImage: `url(${bgImage})`, backgroundSize: "cover"}}
     >
-      <div className="bg-white/30 rounded-bl-md backdrop-blur-sm p-2">
-        <Heading headingData={headingData} />
-      </div>
+      {
+        redirect ? (
+          <div className={headingContainerStyle}>
+            <Link href={redirect}>
+              <Heading headingData={headingData} />
+            </Link>
+          </div>
+        ) : (
+          headingData &&
+          <div className={headingContainerStyle}>
+            <Heading headingData={headingData} />
+          </div>
+        )
+      }
     </div>
   )
 }

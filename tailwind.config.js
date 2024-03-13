@@ -18,7 +18,8 @@ module.exports = {
           lighter: '#50727B'
         },
         orange: {
-          default: '#EC861B'
+          default: '#EC861B',
+          light: '#ffc170'
         }
       }
     }
