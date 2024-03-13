@@ -9,6 +9,7 @@ const homepageCardData = [
     containerStyle: "order-3 md:order-none border-2 border-black",
     bgImage: "https://t3.ftcdn.net/jpg/02/59/31/70/360_F_259317013_nJJaBgGGzvXMd6cAyLd6yMJtbdnd61wk.webp",
     headingContainerStyle: "flex justify-center items-center text-center w-full h-full px-10",
+    redirect: "/todo",
     headingData: {
       className: "text-8xl font-semibold text-blue-dark transition ease-in-out delay-150 hover:scale-110 duration-300",
       title: "Todo",
