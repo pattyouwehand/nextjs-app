@@ -1,7 +1,7 @@
 'use client'
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
-import InputField from './InputField'
+import InputField from '../components/molecules/InputField'
 
 const Search = ({ placeholder }) => {
   const searchParams = useSearchParams()

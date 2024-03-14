@@ -1,18 +1,14 @@
 import Link from "next/link"
 import Card from "../components/molecules/Card"
-
-const getCharacters = async () => {
-  const res = await fetch('https://rickandmortyapi.com/api/character')
-  return res.json()
-}
+import { fetchCharacters } from "../lib/data"
 
 const AllCharacters = async ({ query, currentPage }) => {
-  const characters = await getCharacters(query, currentPage)
+  const characters = await fetchCharacters(query, currentPage)
 
   return (
     <div className="grid grid-cols-1 min-[425px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bg-primary mt-6">
       {
-        characters.results.map((character) => {
+        characters?.results?.map((character) => {
           const cardData = {
             containerStyle: "rounded-md h-full flex justify-start items-end shadow-md hover:shadow-xl",
             bgImage: character.image,

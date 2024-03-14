@@ -1,18 +1,9 @@
 import DetailSection from "@/app/components/organisms/DetailSection"
-
-const getCharacter = async (id) => {
-  const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
-  return res.json()
-}
-
-const getLocation = async (id) => {
-  const res = await fetch(`https://rickandmortyapi.com/api/location/${id}`)
-  return res.json()
-}
+import { fetchCharacterById, fetchLocation } from "@/app/lib/data"
 
 const CharacterDetails = async ({ params }) => {
-  const character = await getCharacter(params.id)
-  const location = await getLocation(params.id)
+  const character = await fetchCharacterById(params.id)
+  const location = await fetchLocation(params.id)
 
   const {
     image,
@@ -39,7 +30,7 @@ const CharacterDetails = async ({ params }) => {
   }
 
   return (
-    <main className="h-screen">
+    <main className="min-h-screen">
       <DetailSection detailSectionData={detailSectionData} />
     </main>
   )
