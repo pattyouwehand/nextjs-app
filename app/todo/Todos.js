@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import InputField from '../ui/InputField'
+import InputField from '../components/molecules/InputField'
 import { FaRegEdit } from 'react-icons/fa'
 import { MdDeleteForever } from 'react-icons/md'
 

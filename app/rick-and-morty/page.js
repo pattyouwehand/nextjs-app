@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import Search from '../ui/search'
 import AllCharacters from './AllCharacters'
 import Heading from '../components/atoms/Heading'
@@ -30,9 +29,7 @@ const RickAndMorty = ({ searchParams }) => {
         </div>
       </div>
       <Search placeholder="Search character" />
-      <Suspense key={name + currentPage} fallback={<div>fallback</div>}>
-        <AllCharacters query={name} currentPage={currentPage} />
-      </Suspense>
+      <AllCharacters query={name} currentPage={currentPage} />
     </main>
   )
 }
