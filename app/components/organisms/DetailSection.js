@@ -56,7 +56,7 @@ const DetailSection = ({ detailSectionData }) => {
 
   return (
     <div
-      className="flex justify-center items-center w-full h-full"
+      className="flex justify-center items-center w-full min-h-screen"
       style={{
         backgroundImage: `url(https://images.hdqwalls.com/download/rick-and-morty-escape-5k-wd-2560x1440.jpg)`,
         backgroundSize: "cover",

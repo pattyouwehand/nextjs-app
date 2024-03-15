@@ -35,7 +35,7 @@ const homepageCardData = [
 
 const HomePageTemplate = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 gap-2 md:gap-0 py-5 md:px-30 lg:px-[25%] xl:w-full 2xl:w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 gap-2 md:gap-0 py-5 mx-5 md:mx-0 md:px-30 lg:px-[25%] xl:w-full 2xl:w-full">
       {
         homepageCardData.map((card, index) => {
           return <Card cardData={card} key={`homepage-card-${index}`} />
