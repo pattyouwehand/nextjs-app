@@ -88,7 +88,7 @@ const Todos = () => {
             </div>
           ))
         ) : (
-          <div classname="flex justify-start items-center mt-24">
+          <div className="flex justify-start items-center mt-24">
             <p className=" text-lg font-bold">No running stasks for today!</p>
           </div>
         )
