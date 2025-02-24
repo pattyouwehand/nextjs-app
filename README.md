@@ -1,17 +1,27 @@
-# Rick and Morty Explorer + Todo App
-This project is a Next.js 14 application styled with Tailwind CSS, built to demonstrate technical proficiency in modern web development. The app features data fetched from the Rick and Morty API, with a dynamic character browser that includes search functionality, pagination, and individual character detail pages.
+# Next.js 14 Rick and Morty Explorer + Todo App with AWS & MongoDB
+This project is a Next.js 14 application styled with Tailwind CSS, built to demonstrate technical proficiency in modern full-stack development. The app features:
 
-The project also includes a basic Todo app, showcasing functionality for adding, modifying, and deleting tasks. Originally created as part of a technical assignment, this project shows clean architecture, efficient data handling, and responsive design using cutting-edge tools and frameworks.
+* A dynamic Rick and Morty character browser with search, pagination, and detailed character pages.
+* A Todo App backed by AWS Lambda, API Gateway, and MongoDB, enabling task management with full CRUD operations.
+* A CI/CD pipeline with GitHub Actions, ensuring automated testing and deployment.
 
 Explore the code to see technical concepts in action!
 
-### Technologies used
-* Next.js 14: Server-side rendering, dynamic routing, and API handling.
-* Tailwind CSS: Utility-first CSS framework for rapid and responsive styling.
-* JavaScript (ES6+): Core scripting for functionality.
-* Rick and Morty API: Integration with REST API for dynamic data fetching.
-* React Hooks: State and lifecycle management.
-* Git: Version control for project tracking.
+## Technologies used
+### Frontend
+* Next.js 14 – Server-side rendering, dynamic routing, and API handling.
+* React & Hooks – State and lifecycle management.
+* Tailwind CSS – Utility-first CSS for a responsive and modern UI.
+
+### Backend & Cloud Infrastructure
+* AWS Lambda – Serverless backend to handle API requests.
+* API Gateway – Routes API calls to the Lambda function.
+* MongoDB Atlas – Cloud-based NoSQL database for data storage.
+* S3 & Amplify – For deployment.
+  
+### Development & Deployment
+* GitHub Actions – Automated CI/CD pipeline for testing and deployment.
+* ESLint & Jest – Code linting and unit testing to maintain quality.
 
 ![Screenshot_115](https://github.com/user-attachments/assets/e243fdfd-6478-4091-b2b4-c18f9f3614ea)
 ![Screenshot_117](https://github.com/user-attachments/assets/5f1b0a4f-828e-4209-8b78-336e783d310b)
@@ -42,9 +52,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
