@@ -1,23 +1,28 @@
-# Next.js 14 Rick and Morty Explorer + Todo App with AWS & MongoDB
-This project is a Next.js 14 application styled with Tailwind CSS, built to demonstrate technical proficiency in modern full-stack development. The app features:
+# Next.js 14 Rick and Morty Explorer + Todo App with TypeScript, AWS & MongoDB
+This project is a Next.js 14 application written in TypeScript, styled with Tailwind CSS and built to demonstrate technical proficiency in modern full-stack development. The app features:
 
 * A dynamic Rick and Morty character browser with search, pagination, and detailed character pages.
 * A Todo App backed by AWS Lambda, API Gateway, and MongoDB, enabling task management with full CRUD operations.
+* TypeScript Conversion – Improved type safety and maintainability across the project.
 * A CI/CD pipeline with GitHub Actions, ensuring automated testing and deployment.
 
-Explore the code to see technical concepts in action!
-
 ## Technologies used
+### Languages & Tools
+* TypeScript & JavaScript – Static typing and modern ES features.
+* Next.js & React – Framework and library for frontend development.
+* Tailwind CSS – Utility-first styling.
+* Node.js – Backend runtime for serverless functions.
+* AWS & MongoDB – Cloud infrastructure and NoSQL database.
+  
 ### Frontend
 * Next.js 14 – Server-side rendering, dynamic routing, and API handling.
 * React & Hooks – State and lifecycle management.
-* Tailwind CSS – Utility-first CSS for a responsive and modern UI.
+* Tailwind CSS – For a responsive and modern UI.
 
 ### Backend & Cloud Infrastructure
 * AWS Lambda – Serverless backend to handle API requests.
-* API Gateway – Routes API calls to the Lambda function.
-* MongoDB Atlas – Cloud-based NoSQL database for data storage.
-* S3 & Amplify – For deployment.
+* MongoDB Atlas – NoSQL database for scalable data storage.
+* S3 & Amplify – Deployment and asset storage.
   
 ### Development & Deployment
 * GitHub Actions – Automated CI/CD pipeline for testing and deployment.
