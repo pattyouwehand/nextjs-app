@@ -1,6 +1,6 @@
 import HomePageTemplate from "./components/templates/HomePageTemplate"
 
-const Home = () => {
+const Home: React.FC = () => {
 
   return (
     <main className="flex justify-center items-center min-h-screen bg-green-lighter">

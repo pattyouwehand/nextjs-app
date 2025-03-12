@@ -5,18 +5,23 @@ import InputField from '../components/molecules/InputField'
 import { FaRegEdit } from 'react-icons/fa'
 import { MdDeleteForever } from 'react-icons/md'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL as string
+
+interface TodoItem {
+  _id: string;
+  value: string;
+}
 
 const Todos = () => {
-  const [userInput, setUserInput] = useState('')
-  const [list, setList] = useState([])
+  const [userInput, setUserInput] = useState<string>("")
+  const [list, setList] = useState<TodoItem[]>([])
 
   useEffect(() => {
     const fetchTodos = async () => {
       try {
         const response = await fetch(API_URL)
         if (!response.ok) throw new Error("Failed to fetch todos")
-        const data = await response.json()
+        const data: TodoItem[] = await response.json()
         setList(data)
 
       } catch (error) {
@@ -26,11 +31,11 @@ const Todos = () => {
     fetchTodos()
   }, [])
 
-  const updateInput = (value) => setUserInput(value)
+  const updateInput = (value: string) => setUserInput(value)
 
   const addItem = async () => {
     if (!userInput.trim()) return
-    const newTodo = { value: userInput }
+    const newTodo: Omit<TodoItem, "_id"> = { value: userInput }
 
     try {
       const response = await fetch(API_URL, {
@@ -42,7 +47,7 @@ const Todos = () => {
       if (!response.ok) throw new Error("Failed to add todo")
       const data = await response.json()
 
-      setList([...list, data])
+      setList((prev) => [...prev, data])
       setUserInput("")
 
     } catch (error) {
@@ -50,7 +55,7 @@ const Todos = () => {
     }
   }
 
-  const deleteItem = async (_id) => {
+  const deleteItem = async (_id: string) => {
     try {
       const response = await fetch(`${API_URL}`, {
         method: "DELETE",
@@ -59,14 +64,14 @@ const Todos = () => {
       })
 
       if (!response.ok) throw new Error("Failed to delete todo")
-      setList(list.filter(item => item._id !== _id))
+      setList((prev) => prev.filter((item) => item._id !== _id))
 
     } catch (error) {
       console.error("Error deleting item:", error)
     }
   }
 
-  const editItem = async (index) => {
+  const editItem = async (index: number) => {
     const newValue = prompt('Edit your todo', list[index].value)
     if (!newValue || newValue.trim() === "") return
     const updatedTodo = { ...list[index], value: newValue }
@@ -81,7 +86,7 @@ const Todos = () => {
       if (!response.ok) throw new Error("Failed to update todo")
       const updatedTodos = [...list]
       updatedTodos[index] = updatedTodo
-      setList(updatedTodos)
+      setList((prev) => prev.map((item, i) => (i === index ? updatedTodo : item)))
 
     } catch (error) {
       console.error("Error updating item:", error)
@@ -93,8 +98,8 @@ const Todos = () => {
     labelForSrOnly: "todo",
     placeholder: "Add item",
     value: userInput,
-    onChange: (e) => updateInput(e.target.value),
-    icon: false
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => updateInput(e.target.value),
+    icon: undefined
   }
 
   return (

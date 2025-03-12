@@ -1,28 +1,31 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ **/
 const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'rickandmortyapi.com',
-        port: '',
         pathname: '/**/**/**/**',
       },
       {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
-        port: '',
         pathname: '/**/**/**/**',
       },
       {
         protocol: 'https',
         hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**/**/**/**',
+        pathname: '/**/**/**/**'
       }
     ]
   },
   trailingSlash: true,
+  reactStrictMode: true,
+  compiler: {
+    styledComponents: true
+  }
 }
 
-module.exports = nextConfig
+export default nextConfig

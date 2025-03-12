@@ -1,12 +1,13 @@
-const { MongoClient, ObjectId } = require('mongodb')
+import { APIGatewayProxyEventV2, APIGatewayProxyResultV2 } from "aws-lambda"
+import { MongoClient, ObjectId } from "mongodb"
 
-const uri = process.env.MONGODB_URI
-const dbName = process.env.DB_NAME
-const collectionName = process.env.COLLECTION_NAME
+const uri: string = process.env.MONGODB_URI!
+const dbName: string = process.env.DB_NAME!
+const collectionName: string = process.env.COLLECTION_NAME!
 
-let cachedClient = null
+let cachedClient: MongoClient | null = null
 
-exports.handler = async (event) => {
+exports.handler = async (event: APIGatewayProxyEventV2): Promise<APIGatewayProxyResultV2 > => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'OPTIONS, GET, POST, PUT, DELETE',
@@ -35,7 +36,8 @@ exports.handler = async (event) => {
   }
 
   try {
-    let response;
+    let response: APIGatewayProxyResultV2
+
     switch (httpMethod) {
       case 'GET':
         const todos = await collection.find({}).toArray()
@@ -69,7 +71,7 @@ exports.handler = async (event) => {
         break;
 
       case 'DELETE':
-        const { _id: deleteId } = body; // Extract _id from the request body
+        const { _id: deleteId } = body
         const deleteResult = await collection.deleteOne({ _id: new ObjectId(deleteId) })
 
         response = {
@@ -94,7 +96,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: error.message })
+      body: JSON.stringify({ error:  (error as Error).message })
     }
   }
 }

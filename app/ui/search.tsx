@@ -2,14 +2,19 @@
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import InputField from '../components/molecules/InputField'
+import { ChangeEvent } from 'react'
 
-const Search = ({ placeholder }) => {
+interface SearchProps {
+  placeholder: string;
+}
+
+const Search = ({ placeholder }: SearchProps) => {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const {replace} = useRouter()
 
-  const handleSearch = (term) => {
-    const params = new URLSearchParams(searchParams)
+  const handleSearch = (term: string) => {
+    const params = new URLSearchParams(searchParams.toString())
 
     if(term) {
       params.set('name', term)
@@ -22,12 +27,10 @@ const Search = ({ placeholder }) => {
   const inputFieldData = {
     containerStyle: "relative flex w-full md:w-1/2 lg:w-1/4 flex-shrink-0 my-4",
     labelForSrOnly: "search",
-    placeholder: placeholder,
-    onChange: (e) => {
-      handleSearch(e.target.value)
-    },
+    placeholder,
+    onChange: (e: ChangeEvent<HTMLInputElement>) => handleSearch(e.target.value),
     defaultValue: searchParams.get('name')?.toString(),
-    icon: true
+    icon: undefined
   }
 
   return (
