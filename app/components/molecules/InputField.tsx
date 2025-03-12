@@ -1,9 +1,21 @@
 'use client'
 
-import React from 'react'
+import React, { ChangeEvent, JSX } from 'react'
 import { FaMagnifyingGlass } from 'react-icons/fa6'
 
-const InputField = ({ inputFieldData }) => {
+interface InputFieldProps {
+  inputFieldData: {
+    containerStyle?: string;
+    labelForSrOnly: string;
+    placeholder?: string;
+    value?: string;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    defaultValue?: string;
+    icon?: JSX.Element;
+  }
+}
+
+const InputField: React.FC<InputFieldProps> = ({ inputFieldData }) => {
  const {
   containerStyle,
   labelForSrOnly,
@@ -16,8 +28,11 @@ const InputField = ({ inputFieldData }) => {
 
   return (
     <div className={containerStyle}>
-      <label htmlFor={labelForSrOnly} className="sr-only">{labelForSrOnly}</label>
+      <label htmlFor={labelForSrOnly} className="sr-only">
+        {labelForSrOnly}
+      </label>
       <input
+        id={labelForSrOnly}
         className="block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
         placeholder={placeholder}
         value={value}

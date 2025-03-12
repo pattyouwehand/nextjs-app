@@ -1,5 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+/lambda-dist/node_modules
+
+/lambda-dist/function.zip
+
+/lambda-dist/**/*.js.map
+/lambda-dist/**/*.d.ts
+
 # dependencies
 /node_modules
 /.pnp

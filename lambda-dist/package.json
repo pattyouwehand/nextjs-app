@@ -1,5 +1,5 @@
 {
-  "name": "todo-lambda",
+  "name": "lambda-dist",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "mongodb": "^6.13.1"
+    "mongodb": "^6.14.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.147"
   }
 }
