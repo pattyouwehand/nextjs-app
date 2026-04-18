@@ -4,10 +4,10 @@ A full-stack Next.js application combining a dynamic API-driven frontend with a 
 This project combines a Rick and Morty character explorer with a Todo app, built to explore how a modern frontend can interact with serverless APIs and cloud-based data storage.
 
 ## Features
-Rick and Morty character browser with search, pagination, and detail pages
-Todo app with full CRUD functionality using AWS Lambda and API Gateway
-MongoDB Atlas for cloud-based data storage
-CI/CD pipeline with GitHub Actions for automated deployment
+- Rick and Morty character browser with search, pagination, and detail pages
+- Todo app with full CRUD functionality using AWS Lambda and API Gateway
+- MongoDB Atlas for cloud-based data storage
+- CI/CD pipeline with GitHub Actions for automated deployment
 
 ## Technologies used
 ### Languages & Tools
