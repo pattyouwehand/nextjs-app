@@ -1,10 +1,15 @@
-# Next.js 14 Rick and Morty Explorer + Todo App with TypeScript, AWS & MongoDB
-This project is a Next.js 14 application written in TypeScript, styled with Tailwind CSS and built to demonstrate technical proficiency in modern full-stack development. The app features:
+# Next.js App with AWS & MongoDB
+A full-stack Next.js application combining a dynamic API-driven frontend with a serverless AWS backend.
 
-* A dynamic Rick and Morty character browser with search, pagination, and detailed character pages.
-* A Todo App backed by AWS Lambda, API Gateway, and MongoDB, enabling task management with full CRUD operations.
-* TypeScript Conversion – Improved type safety and maintainability across the project.
-* A CI/CD pipeline with GitHub Actions, ensuring automated testing and deployment.
+This project is a full-stack application built with Next.js and TypeScript. It combines a Rick and Morty character explorer with a Todo app backed by a serverless AWS backend.
+
+The goal of this project was to explore how a modern frontend can interact with serverless APIs and cloud-based data storage.
+
+## Features
+Rick and Morty character browser with search, pagination, and detail pages
+Todo app with full CRUD functionality using AWS Lambda and API Gateway
+MongoDB Atlas for cloud-based data storage
+CI/CD pipeline with GitHub Actions for automated deployment
 
 ## Technologies used
 ### Languages & Tools
