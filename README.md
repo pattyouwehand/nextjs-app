@@ -1,9 +1,7 @@
 # Next.js App with AWS & MongoDB
 A full-stack Next.js application combining a dynamic API-driven frontend with a serverless AWS backend.
 
-This project is a full-stack application built with Next.js and TypeScript. It combines a Rick and Morty character explorer with a Todo app backed by a serverless AWS backend.
-
-The goal of this project was to explore how a modern frontend can interact with serverless APIs and cloud-based data storage.
+This project combines a Rick and Morty character explorer with a Todo app, built to explore how a modern frontend can interact with serverless APIs and cloud-based data storage.
 
 ## Features
 Rick and Morty character browser with search, pagination, and detail pages
